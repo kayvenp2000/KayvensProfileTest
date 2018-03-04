@@ -1,3 +1,24 @@
-<p>
-  contact works!
-</p>
+<div class="center">
+  <p>
+    You have probably found out who I am :).
+
+    {{this.lastname}}
+    <br> Do you want contact me?
+    <br> WELL look no further my friends!
+  </p>
+
+  <div class="container">
+    <form #contact="ngForm" (ngSubmit)="OnSubmit()">
+      <input type="text" name="email" placeholders="email" [(ngModel)]="email" required>
+      <input type="text" name="firstName" placeholders="first name" [(ngModel)]="firstname" required>
+      <input type="text" name="lastName" placeholders="last name" [(ngModel)]="lastname" required>
+      <textarea name="email" class="form-control" id="exampleTextarea" rows="3" required [(ngModel)]="content"></textarea>
+      <button type="submit" class="btn btn-success btn-send" value="Send message">Send Message</button>
+
+    </form>
+  </div>
+
+  <img src="../../assets/txt.logo.png">
+
+  <p>Email me at: <a href="mailto:kayvenp2000@gmail.com">My email!</a><p>
+</div>

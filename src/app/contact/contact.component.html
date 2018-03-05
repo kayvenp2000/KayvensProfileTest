@@ -8,7 +8,7 @@
   </p>
 
   <div class="container">
-    <form #contact="ngForm" (ngSubmit)="OnSubmit()">
+    <form #contact="ngForm">
       <input type="text" name="email" placeholders="email" [(ngModel)]="email" required>
       <input type="text" name="firstName" placeholders="first name" [(ngModel)]="firstname" required>
       <input type="text" name="lastName" placeholders="last name" [(ngModel)]="lastname" required>

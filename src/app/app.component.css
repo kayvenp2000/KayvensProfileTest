@@ -1,10 +1,11 @@
 h1 {
-    color: black;
+  color: black;
 }
 .blue-body {
-  background-color: #4C0051;
-  width: 450%;
+background-color: #4C0051;
+width: 450%; 
 }
- .navbar-brand {
-   background-color: purple;
+.navbar-brand {
+ background-color: purple;
+ width: 100%;
 }

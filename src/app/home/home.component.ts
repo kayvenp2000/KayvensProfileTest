@@ -9,7 +9,7 @@ import { DataService} from '../data.service';
 export class HomeComponent implements OnInit {
   homeContent: any;
   constructor(private dataService:DataService) {
-    this.dataService.getHomeText().subscribe(data=>this.homeContent=data)
+    //this.dataService.getHomeText().subscribe(data=>this.homeContent=data)
    }
 
   ngOnInit() {

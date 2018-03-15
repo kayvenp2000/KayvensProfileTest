@@ -21,7 +21,7 @@ export class ContactComponent implements OnInit {
 
 
   constructor(private dataService:DataService) {
-    this.dataService.getContactText().subscribe(data=>this.contactContent=data)
+    //this.dataService.getContactText().subscribe(data=>this.contactContent=data)
    }
 
   ngOnInit() {

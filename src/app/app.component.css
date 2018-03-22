@@ -1,11 +1,40 @@
-h1 {
-  color: black;
-}
+
 .blue-body {
-background-color: #4C0051;
+background-color: rgb(8, 136, 158);
 width: 450%; 
 }
-.navbar-brand {
- background-color: purple;
- width: 100%;
+
+.photo {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.navbar-light {
+  background-color: #282828 !important;
+}
+
+#first{
+  color: #5faaf2;
+  cursor: pointer;
+}
+
+#last {
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in all;
+}
+
+#last:hover{
+  color: #5faaf2;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  transition: 0.2s ease-in all;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #5faaf2;
+}
+
+.active{
+  color: #5faaf2 !important;
 }

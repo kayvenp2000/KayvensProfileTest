@@ -1,7 +1,12 @@
 <div class="center">
+<div class="home-container2">
   <p *ngFor="let contact of contactContent">
     
-  </p>
+<h1>
+  My Contact Page
+</h1>
+
+
   <p>
     You have probably found out who I am :).
 
@@ -11,11 +16,11 @@
   </p>
 
   <div class="container">
-    <form #contact="ngForm">
+    <form #contact="ngForm" (ngSubmit)="onSubmit()">
       <input type="text" name="email" placeholders="email" [(ngModel)]="email" required>
-      <input type="text" name="firstName" placeholders="first name" [(ngModel)]="firstname" required>
+      <input type="text" name="firstName" placeholders="first name" [(ngModel)]="firstName" required>
       <input type="text" name="lastName" placeholders="last name" [(ngModel)]="lastname" required>
-      <textarea name="email" class="form-control" id="exampleTextarea" rows="3" required [(ngModel)]="content"></textarea>
+      <textarea name="message" class="form-control" id="exampleTextarea" rows="3" required [(ngModel)]="userMessage"></textarea>
       <button type="submit" class="btn btn-success btn-send" value="Send message">Send Message</button>
 
     </form>
@@ -24,4 +29,5 @@
   <img src="../../assets/txt.logo.png">
 
   <p>Email me at: <a href="mailto:kayvenp2000@gmail.com">My email!</a><p>
+</div>
 </div>

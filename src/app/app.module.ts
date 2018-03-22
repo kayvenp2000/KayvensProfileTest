@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from './_services/auth/auth.service';
 
 
 
@@ -31,7 +32,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [DataService, {provide:LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [DataService, AuthService, {provide:LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

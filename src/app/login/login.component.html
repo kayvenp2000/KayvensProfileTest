@@ -1,5 +1,15 @@
+<h1>
+  My Login Page
+</h1>
+
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm" >
-  
+ 
+<div class="w3-container"> 
+  <p>
+    I have below the common credential fill in for my audience to login and comment of which the random decision to further communicate of my well being.
+  </p>
+</div> 
+
   <input type = "text" [(ngModel)] = "email" name="email" placeholder = "email" required />
   <input type = "password" [(ngModel)] = "password" name="password" placeholder = "password" required  />
   <button type = "submit" [disabled]="!loginForm.valid">Log In</button>
@@ -7,3 +17,4 @@
 </form>
 
 {{passwordStatus}}
+

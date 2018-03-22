@@ -1,3 +1,29 @@
-<p *ngFor="let content of homeContent">
-{{content.content}}
-</p>
+<div class="home-container">
+    <h1>
+        My Home Page
+    </h1>
+    
+    <div class="w3-container">
+    <p>
+      Kayven Perez is a current male Highschooler whos time is commited in getting good grades at school while taking a Full Stack Developer class at the college level at Teens Exploring Techonology (TxT)<br>
+    </p>
+    </div>
+    
+    <div class="w3-container1">
+      <p>
+          Before TxT, I was an indepedent individual who persevered to get into college without the serendipity. After going through the SCLA program my lenses have expanded the purifical vision and onto the 360 degree spectrum of thought. Thinking outside the box now, I observe and think critically to understand what seems convoluted into simple implications to acheiving my success. My success is to work within the Artificial Intellgence departments and manage the ongoing projects the alter civil life in the making for Humanity. In doing so I first start with my first creation, my Web Application built from a Full Stack developer.
+      </p>
+    </div>
+    
+    <img class="photo" src="../../assets/jinx.png.png" alt="picture" />
+    <p> <b> JINX <i> The Loose Cannon </i> </b> </p>
+    <p *ngFor="let content of homeContent">
+    {{content.content}}
+    </p>
+    
+    <div class="w3-container2">
+    <p>
+        Such a project deserves more recognition, dont you think?! 
+    </p>
+    </div>
+</div>

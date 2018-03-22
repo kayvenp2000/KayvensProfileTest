@@ -3,3 +3,12 @@
     margin: auto;
     text-align: center;
 }
+
+h1 {
+    color:rgb(20, 84, 140);
+    padding: 25px 75px 45px 75px;
+  }
+
+  .home-container1{
+    padding: 95px 75px 75px 95px;
+}  

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from "@angular/common/http";
-import { DataService} from '../data.service';
+import { AuthService } from '../_services/auth/auth.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,18 +13,33 @@ export class ContactComponent implements OnInit {
 
   title = 'Kayvens Profile';
   bodyClass = 'blue-body';
+  newMsg:any;
   email: string;
-  firstname: string;
+  firstName: string;
   lastname: string;
-  content: string;
+  message: string;
+  messages: any;
+  userMessage:string;
 
 
 
-  constructor(private dataService:DataService) {
-    //this.dataService.getContactText().subscribe(data=>this.contactContent=data)
+  constructor(private dataService:AuthService) {
    }
 
   ngOnInit() {
   }
 
+  onSubmit(){
+    this.newMsg = {
+      name: this.firstName,
+      message: this.userMessage
+      
+    }
+
+    this.dataService.sendMessage(this.newMsg)
+      .subscribe(message => this.messages.push(message))
+
+  } 
+
 }
+

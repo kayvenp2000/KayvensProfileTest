@@ -1,10 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../_services/auth/auth.service';
+import { HttpClient } from '@angular/common/http';
+
+var localstorage = window.localStorage;
+
+class Credentials {
+  email: string;
+  password: string;
+}
 
 interface ServerResponse {
   type: boolean;
   data: any;
+  token: any;
 
 }
 @Component({
@@ -13,39 +23,39 @@ interface ServerResponse {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email: any
-  password: any
-  attempts:any
-  passwordStatus: any
+  public credentials: Credentials;
+  auth
+
+  ngOnInit(){
+    this.credentials = new Credentials();
+  }
   
 
-  credentials:any 
   constructor(private dataService: DataService, private router: Router) { }
 
 
 
-  onSubmit(){
-    this.credentials = {"email":this.email, "password": this.password}
-    console.log(this.credentials)
-    this.dataService.login(this.credentials).subscribe((res:ServerResponse)=>{
-      console.log(res)
-
-      this.email = ""
-      this.password = ""
-      this.router.navigateByUrl('/home');
-      this.passwordStatus = ""
-    },(err)=>{
-      console.log(err.error)
-      if(err.error.data === "wrongPassword"){
-        console.log("wrong password")
-        this.passwordStatus = "Wrong Password"
-      }else if (err.error.data === "invalidEmail"){
-        console.log("wrong email")
-        this.passwordStatus = "Wrong Email"
-      }
-    })
-  }
-  ngOnInit() {
+  onSubmit() {
+    this.auth.login(this.credentials)
+      .subscribe((res: ServerResponse) => {
+        console.log(res);
+        if (res.type === true) {
+          console.log('Welcome!');
+          console.log(res.token);
+          localStorage.setItem('authorization', res.token);
+          this.credentials.email = "";
+          this.credentials.password = "";
+          this.router.navigateByUrl('Home');
+        } else if (this.credentials.email != 'asarelc@gmail.com') {
+          alert('Nah kiddo, wrong email!');
+        } else if (this.credentials.password != 'wu4azare') {
+          alert ('Nah kiddo, wrong password!');
+          console.log(res.data);
+        }  
+      }, (err) => {
+        console.log(err);
+        console.log(this.credentials);
+      });
   }
 
 }

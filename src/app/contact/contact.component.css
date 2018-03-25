@@ -12,3 +12,11 @@ h1 {
   .home-container1{
     padding: 95px 75px 75px 95px;
 }  
+
+.container{
+    padding: 15px 75px 75px 95px;
+}
+
+.containerCC{
+    padding: 15px 75px 45px 95px;
+}

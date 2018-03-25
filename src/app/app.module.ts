@@ -9,11 +9,13 @@ import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './_services/auth/auth.service';
+
 
 
 
@@ -23,7 +25,8 @@ import { AuthService } from './_services/auth/auth.service';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    BlogComponent
     
   ],
   imports: [

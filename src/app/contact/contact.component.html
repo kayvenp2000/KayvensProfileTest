@@ -20,11 +20,14 @@
       <input type="text" name="email" placeholders="email" [(ngModel)]="email" required>
       <input type="text" name="firstName" placeholders="first name" [(ngModel)]="firstName" required>
       <input type="text" name="lastName" placeholders="last name" [(ngModel)]="lastname" required>
+    
+
+    <div class="containerCC">
       <textarea name="message" class="form-control" id="exampleTextarea" rows="3" required [(ngModel)]="userMessage"></textarea>
       <button type="submit" class="btn btn-success btn-send" value="Send message">Send Message</button>
-
+    </div>
     </form>
-  </div>
+  
 
   <img src="../../assets/txt.logo.png">
 
